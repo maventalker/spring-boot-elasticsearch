@@ -2,7 +2,7 @@
 通过三种方式操作elasticsearch
 - 原生的TransportClient方式，还有一种是NodeClient形式，本章节不涉及，具体区别可网络检索下。 CommandOnStart启动后即加载的类中有涉及
 - BlackGreyDataRepository方式，集成度较高，基本满足需要，包括索引的CRUD。BlackGreyDataService有涉及
-- ElasticsearchTemplate方式，方法众多，比较灵活。IndexerService中有采用
+- ElasticsearchTemplate方式，方法众多，比较灵活。IndexerService中有采用bulk的方式来批量操作索引
 
 
 >项目构建基于profiles完完成了多环境的切换。
