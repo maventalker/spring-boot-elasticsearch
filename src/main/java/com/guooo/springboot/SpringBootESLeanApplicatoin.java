@@ -5,8 +5,11 @@
 */
 package com.guooo.springboot;
 
+import org.apache.http.HttpHost;
+import org.elasticsearch.client.RestClient;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 /**
  * ClassName:ZhishiAppservApplication <br/>
@@ -23,5 +26,11 @@ public class SpringBootESLeanApplicatoin {
 
     public static void main(String[] args) {
         SpringApplication.run(SpringBootESLeanApplicatoin.class, args);
+    }
+    
+    @Bean
+    public RestClient elasticsearchRestClient(){
+        RestClient restClient = RestClient.builder(new HttpHost("192.168.1.103",9200,"http")).build();
+        return restClient;
     }
 }
